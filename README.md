@@ -182,7 +182,7 @@ a:/port/
 
 For any questions or suggestions, feel free to reach out:
 
-- **Email**: ankit.gupta@example.com
+- **Email**: guptaankit98242@gmail.com
 - **LinkedIn**: [Your LinkedIn Profile]
 - **GitHub**: [Your GitHub Profile]
 - **Upwork**: [Your Upwork Profile]
