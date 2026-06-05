@@ -88,7 +88,7 @@ const Hero = () => {
 
               {/* Secondary: Resume */}
               <a
-                href="https://drive.google.com/file/d/1X-G7EmvFyairISLc528-ShJ_-wGLsZ07/view?usp=drive_link"
+                href="https://drive.google.com/file/d/15fg2ltjWXVSPZs9NL8D1LsAu0X6CJ6qW/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-semibold text-zinc-300 hover:text-white bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-all duration-300"
