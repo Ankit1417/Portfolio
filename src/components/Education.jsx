@@ -1,101 +1,40 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
+import { GraduationCap, Award, Calendar } from 'lucide-react';
 
 const Education = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-background" ref={ref}>
-      <div className="max-w-7xl mx-auto">
+    <section id="education" className="py-16 relative overflow-hidden" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-accent mb-4">Education</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <div className="bg-gradient-to-r from-primary to-secondary p-8">
-              <div className="flex items-center gap-4 text-white">
-                <div className="p-4 bg-white bg-opacity-20 backdrop-blur-lg rounded-xl">
-                  <GraduationCap className="w-12 h-12" />
-                </div>
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                    Bachelor of Technology
-                  </h3>
-                  <p className="text-lg opacity-90">Computer Science and Engineering</p>
-                </div>
+          {/* Condensed Glass Card */}
+          <div className="glass-card p-6 border border-zinc-900 flex flex-col sm:flex-row items-center gap-6 justify-between hover:border-zinc-800 transition-colors">
+            <div className="flex items-center gap-4 text-left">
+              <div className="p-3.5 bg-zinc-900 border border-zinc-800 text-primary rounded-xl shrink-0">
+                <GraduationCap className="w-8 h-8" />
+              </div>
+              <div>
+                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest block">Academic Credentials</span>
+                <h3 className="text-lg font-bold font-display text-white mt-0.5">
+                  Bachelor of Technology
+                </h3>
+                <p className="text-zinc-400 text-xs font-light">
+                  Computer Science & Engineering • Vignan's Foundation for Science, Technology & Research
+                </p>
               </div>
             </div>
 
-            <div className="p-8 space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-background rounded-lg">
-                  <Award className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-accent text-lg mb-1">Institution</h4>
-                  <p className="text-gray-700">
-                    Vignan's Foundation for Science, Technology & Research
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-background rounded-lg">
-                  <MapPin className="w-6 h-6 text-secondary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-accent text-lg mb-1">Location</h4>
-                  <p className="text-gray-700">Andhra Pradesh, India</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-background rounded-lg">
-                  <Calendar className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-accent text-lg mb-1">Duration</h4>
-                  <p className="text-gray-700">Currently Pursuing</p>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <h4 className="font-semibold text-accent text-lg mb-4">Key Focus Areas</h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {[
-                    'Data Structures & Algorithms',
-                    'Database Management',
-                    'Web Development',
-                    'Data Analytics',
-                    'Software Engineering',
-                    'Machine Learning'
-                  ].map((area, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                      className="px-4 py-3 bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-lg text-center"
-                    >
-                      <span className="text-sm font-medium text-accent">{area}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+            <div className="flex items-center gap-2 text-xs font-semibold text-zinc-400 bg-zinc-950 border border-zinc-900 px-4 py-2 rounded-xl">
+              <Calendar className="w-4 h-4 text-secondary" />
+              <span>Andhra Pradesh, India</span>
             </div>
           </div>
         </motion.div>

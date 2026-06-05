@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,12 +16,47 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #F9FAFB;
-  color: #0F172A;
+  background-color: #030712;
+  color: #f4f4f5;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
 }
 
 @layer utilities {
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-darkCard backdrop-blur-md border border-darkBorder rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply hover:border-zinc-700/50 hover:bg-zinc-900/40 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.15)] transition-all duration-500;
+  }
+
+  .glow-dot {
+    @apply w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981];
   }
 }
